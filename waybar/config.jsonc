@@ -1,7 +1,7 @@
 {
     "layer": "top",
     "position": "top",
-    "height": 32,
+    "height": 36,
     "margin-top": 8,
     "margin-left": 8,
     "margin-right": 8,
@@ -18,8 +18,8 @@
     [
         "tray",
         "hyprland/language",
-        "pulseaudio",
-        "wireplumber",
+        "pulseaudio#microphone",
+        "pulseaudio#speakers",
         "bluetooth",
         "network",
         "backlight",
@@ -60,7 +60,7 @@
         "format-ru": "  RU"
     },
 
-    "pulseaudio":
+    "pulseaudio#microphone":
     {
         "format": "{format_source}",
         "format-source": " {volume}%",
@@ -68,10 +68,12 @@
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
     },
 
-    "wireplumber": {
+    "pulseaudio#speakers": {
         "format": "{icon} {volume}%",
         "format-muted": "婢",
-        "format-icons": ["奄", "奔", "墳"],
+        "format-icons": {
+            "default": ["奄", "奔", "墳"]
+        },
         "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
     },
 
