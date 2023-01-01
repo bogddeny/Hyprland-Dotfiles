@@ -1,0 +1,12 @@
+#!/bin/sh
+
+percentage_speakers="$(wpctl get-volume @DEFAULT_AUDIO_SINK@ | tr -dc '0-9'| awk '{$0=int($0)}1')"
+percentage_microphone="$(wpctl get-volume @DEFAULT_AUDIO_SOURCE@ | tr -dc '0-9'| awk '{$0=int($0)}1')"
+
+[ "$1" = "speakers" ] && [ "$2" = "lower" ] && wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%- && exit
+[ "$1" = "speakers" ] && [ "$2" = "raise" ] && [ "$percentage_speakers" -lt "100" ] && wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+ && exit
+[ "$1" = "speakers" ] && [ "$2" = "mute" ] && wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle && exit
+
+[ "$1" = "microphone" ] && [ "$2" = "lower" ] && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%- && exit
+[ "$1" = "microphone" ] && [ "$2" = "raise" ] && [ "$percentage_microphone" -lt "100" ] && wpctl set-volume @DEFAULT_AUDIO_SOURCE@ 5%+ && exit
+[ "$1" = "microphone" ] && [ "$2" = "mute" ] && wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle && exit

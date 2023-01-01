@@ -1,0 +1,130 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 32,
+    "margin-top": 8,
+    "margin-left": 8,
+    "margin-right": 8,
+
+    "modules-left":
+    [
+        "wlr/workspaces"
+    ],
+    "modules-center":
+    [
+        "hyprland/window"
+    ],
+    "modules-right":
+    [
+        "tray",
+        "hyprland/language",
+        "pulseaudio",
+        "wireplumber",
+        "bluetooth",
+        "network",
+        "backlight",
+        "battery",
+        "clock#time",
+        "clock#date"
+    ],
+
+    "wlr/workspaces":
+    {
+        "format": "{icon}",
+        "format-icons":
+        {
+            "active": "",
+            "default": ""
+        },
+        "on-click": "activate",
+        "on-scroll-up": "hyprctl dispatch workspace e+1",
+        "on-scroll-down": "hyprctl dispatch workspace e-1"
+    },
+
+    "hyprland/window":
+    {
+        "format": "{}",
+        "separate-outputs": true,
+        "max-length": 24
+    },
+
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10
+    },
+
+    "hyprland/language":
+    {
+        "format-en": "  EN",
+        "format-gr": "  GR",
+        "format-ru": "  RU"
+    },
+
+    "pulseaudio":
+    {
+        "format": "{format_source}",
+        "format-source": " {volume}%",
+        "format-source-muted": "",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+    },
+
+    "wireplumber": {
+        "format": "{icon} {volume}%",
+        "format-muted": "婢",
+        "format-icons": ["奄", "奔", "墳"],
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+    },
+
+    "bluetooth": {
+        "format": " N/C",
+        "format-off": "",
+        "format-disabled": "",
+        "format-connected": " {device_alias}",
+        "format-connected-battery": " {device_alias} {device_battery_percentage}%",
+        "on-click": "alacritty -e bluetuith"
+    },
+
+    "network": {
+        "interface": "wlp2s0",
+        "format": "{ifname}",
+        "format-wifi": "直 {essid}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-disconnected": "睊",
+        "on-click": "alacritty -e nmtui",
+        "max-length": 50
+    },
+
+    "backlight":
+    {
+        "device": "intel_backlight",
+        "format": "{icon}  {percent}%",
+        "format-icons": ["", "", ""]
+    },
+
+    "battery":
+    {
+        "bat": "BAT1",
+        "interval": 60,
+        "states":
+        {
+            "warning": 20,
+            "critical": 10
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": "  {capacity}%",
+        "format-icons": ["", "", "", "", "", "", "", "", "", ""],
+        "max-length": 25
+    },
+
+    "clock#time":
+    {
+        "interval": 30,
+        "format": "  {:%H:%M}"
+    },
+
+    "clock#date":
+    {
+        "interval": 300,
+        "format": "  {:%d/%m/%Y}"
+    }
+}
