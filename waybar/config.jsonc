@@ -25,7 +25,8 @@
         "backlight",
         "battery",
         "clock#time",
-        "clock#date"
+        "clock#date",
+        "custom/powermenu"
     ],
 
     "wlr/workspaces":
@@ -128,5 +129,10 @@
     {
         "interval": 300,
         "format": "  {:%d/%m/%Y}"
+    },
+    "custom/powermenu":
+    {
+        "format": "襤",
+        "on-click": "wlogout"
     }
 }

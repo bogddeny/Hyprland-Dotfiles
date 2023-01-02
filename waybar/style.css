@@ -11,7 +11,7 @@ window#waybar {
     color: @theme_text_color;
 }
 
-#clock,#battery,#backlight,#network,#bluetooth,#pulseaudio,#language,#tray {
+#custom-powermenu,#clock,#battery,#backlight,#network,#bluetooth,#pulseaudio,#language,#tray {
     background-color: @theme_base_color;
     padding: 0px 4px 0px 4px;
     margin-left: 4px;
