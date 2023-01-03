@@ -19,7 +19,7 @@ paru -S nerd-fonts-complete
 <hyprland>
 paru -S hyprland-git
 paru -S waybar-hyprland-git
-sudo pacman -S wofi mako bluez mpv alacritty starship bash-completion thunar firefox xdg-user-dirs papirus-icon-theme gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb ntfs-3g
+sudo pacman -S wlogout wofi mako bluez mpv alacritty starship bash-completion thunar thunar-archive-plugin xarchiver tar zip unrar p7zip firefox xdg-user-dirs papirus-icon-theme gvfs gvfs-afc gvfs-goa gvfs-google gvfs-gphoto2 gvfs-mtp gvfs-nfs gvfs-smb ntfs-3g
 paru -S hyprpaper-git
 paru -S hyprpicker-git
 paru -S hyprshot-git
