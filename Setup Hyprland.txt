@@ -27,3 +27,6 @@ paru -S xdg-desktop-portal-hyprland-git
 paru -S greetd
 paru -S bluetuith
 paru -S orchis-theme-git
+
+gsettings set org.gnome.desktop.interface gtk-theme Orchis-Dark
+gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
