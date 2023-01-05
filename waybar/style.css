@@ -39,6 +39,7 @@ window#waybar {
 #workspaces {
     background-color: @theme_base_color;
     color: @theme_text_color;
+    margin-right: 4px;
     min-width: 32px;
 }
 
